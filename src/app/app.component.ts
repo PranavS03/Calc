@@ -5,11 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent  {
   title = 'Calculator';
   currentNumber = '0';
-  firstOperand!:number|null| undefined;
-  operator!: string | null;
+  firstOperand;
+  operator=null;
   waitForSecondNumber = false;
   constructor() { }
 
@@ -51,12 +51,12 @@ export class AppComponent {
   public getOperation(op: string){
     console.log(op);
 
-    if(this.firstOperand === null){
+    if(this.firstOperand === 0){
       this.firstOperand = Number(this.currentNumber);
 
     }else if(this.operator){
       const result = this.doCalculation(this.operator , Number(this.currentNumber))
-      this.currentNumber = String(result);
+      this.currentNumber = (result);
       this.firstOperand = result;
     }
     this.operator = op;

@@ -6,40 +6,31 @@
     <input type="text" class="calculator-screen" [value]="currentNumber" disabled>
     <br>
   </div>
-  <div class="cont3" style='text-align: center;'>
-    <button (click) = "getOperation('+')" class="operator" value="+">Add</button>
-  </div>
-  <div class="cont4" style='text-align: center;'>
-    <button (click) = "getOperation('-')" class="operator" value="-">Subtract</button>
-  </div>
-  <div class="cont5" style='text-align: center;'>
-    <button (click) = "getOperation('*')" class="operator" value="*">Multipication</button>
-  </div>
-  <div class="cont6" style='text-align: center;'>
-    <button (click) = "getOperation('/')" class="operator" value="/">Division</button>
-  </div>
 
   <div class="cont8" style='text-align: center;'>
     <button type="button" (click) = "getNumber('1')" value="1">1</button>
     <button type="button" (click) = "getNumber('2')" value="2">2</button>
     <button type="button" (click) = "getNumber('3')" value="3">3</button>
+    <button (click) = "getOperation('+')" class="operator" value="+">+</button>
   </div>
   <div class="cont8" style='text-align: center;'>
     <button type="button" (click) = "getNumber('4')" value="4">4</button>
     <button type="button" (click) = "getNumber('5')" value="5">5</button>
     <button type="button" (click) = "getNumber('6')" value="6">6</button>
-   
+    <button (click) = "getOperation('-')" class="operator" value="-">-</button>
   </div>
   <div class="cont8" style='text-align: center;'>
     <button type="button" (click) = "getNumber('7')" value="7">7</button>
     <button type="button" (click) = "getNumber('8')" value="8">8</button>
     <button type="button" (click) = "getNumber('9')" value="9">9</button>
+    <button (click) = "getOperation('*')" class="operator" value="*">x</button>
    
   </div>
   <div class="cont8" style='text-align: center;'>
-    <button type="button" (click) = "getOperation('=')" class="equal-sign" value="=">=</button>
-    <button type="button" (click)="getNumber('0')" value="0">0</button>
     <button type="button" class="all-clear" value="all-clear">C</button>
+    <button type="button" (click)="getNumber('0')" value="0">0</button>
+    <button (click) = "getOperation('/')" class="operator" value="/">÷</button>
+    <button type="button" (click) = "getOperation('=')" class="equal-sign" value="=">=</button>
    
   </div>
 </div>
