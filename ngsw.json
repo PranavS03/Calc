@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1619451560457,
+  "timestamp": 1619451852596,
   "index": "/Calc/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/Calc/favicon.ico",
         "/Calc/index.html",
-        "/Calc/main.601414e36943166fa4cd.js",
+        "/Calc/main.c3ae421fb5ed368fb436.js",
         "/Calc/manifest.webmanifest",
         "/Calc/polyfills.94daefd414b8355106ab.js",
         "/Calc/runtime.7b63b9fd40098a2e8207.js",
@@ -38,8 +38,8 @@
   "hashTable": {
     "/Calc/assets/icons/Calculator.png": "527188d39819fb49b75dd8e89b4d96e99bf69d2a",
     "/Calc/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/Calc/index.html": "fc5966fb30fed99d65919410b8ff0787075867f4",
-    "/Calc/main.601414e36943166fa4cd.js": "c8e4e17807d5eb2849b64162806ed4875832562b",
+    "/Calc/index.html": "52c8d4618098a5429a0c451a4a682cb0ad4cff11",
+    "/Calc/main.c3ae421fb5ed368fb436.js": "b169bdcf884689fa7af23a6a4504c97eaafc1c44",
     "/Calc/manifest.webmanifest": "02e2b4c50206ab0437d5a26e1c92f20209c767d2",
     "/Calc/polyfills.94daefd414b8355106ab.js": "cfe7b0b53e96bff9ba384b4d497c08475a617d62",
     "/Calc/runtime.7b63b9fd40098a2e8207.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
