@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import{NgModule} from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,82 +7,71 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   title = 'Calculator';
+  currentNumber = '0';
+  firstOperand = null;
+  operator = null;
+  waitForSecondNumber = false;
 
-  detect=true;
-  num1;
-  num2;
-  opr;
-  result=0;
   constructor() { }
 
   ngOnInit() {
   }
 
-  public getNumber(v){
-    if(this.detect===true){
-      this.num1=v;
-      this.result=v
-      this.detect=false;
-     
-    }
-    else if(this.detect===false){
-      this.num2=v;
-      this.result=v
-      this.result= this.doCalculation(this.num1,this.num2,this.opr)
-      
-      this.detect=true;
-      
-      
-    }
+  public getNumber(v: string){
+    console.log(v);
+    if(this.waitForSecondNumber)
+    {
+      this.currentNumber = v;
+      this.waitForSecondNumber = false;
+    }else{
+      this.currentNumber === '0'? this.currentNumber = v: this.currentNumber += v;
 
+    }
   }
 
+  getDecimal(){
+    if(!this.currentNumber.includes('.')){
+        this.currentNumber += '.'; 
+    }
+  }
+
+  private doCalculation(op , secondOp){
+    switch (op){
+      case '+':
+      return this.firstOperand += secondOp; 
+      case '-': 
+      return this.firstOperand -= secondOp; 
+      case '*': 
+      return this.firstOperand *= secondOp; 
+      case '/': 
+      return this.firstOperand /= secondOp; 
+      case '=':
+      return secondOp;
+    }
+  }
+  public getOperation(op: string){
+    console.log(op);
+
+    if(this.firstOperand === null){
+      this.firstOperand = Number(this.currentNumber);
+
+    }else if(this.operator){
+      const result = this.doCalculation(this.operator , Number(this.currentNumber))
+      this.currentNumber = result;
+      this.firstOperand = result;
+    }
+    this.operator = op;
+    this.waitForSecondNumber = true;
 
     
-    // if(this.waitForSecondNumber)
-    // {
-    //   this.currentNumber = v;
-    //   this.waitForSecondNumber = false;
-      
-      
-    // }else{
-    //   this.currentNumber === 0? this.currentNumber = v: this.currentNumber += v;
-    //   console.log(this.currentNumber);
-
-    // }
-  
-
- 
-
-  private doCalculation(number1, number2, opp){
-    switch (opp){
-      case '+':
-      return parseFloat(number1)+ parseFloat(number2);
-      case '-': 
-      return parseFloat(number1)-parseFloat(number2); 
-      case '*': 
-      return parseFloat(number1)*parseFloat(number2);
-      case '/': 
-      return parseFloat(number1)/parseFloat(number2);
-     
-    }
-  }
-  public getOperation(op){
-
-    this.opr=op;
-    console.log(this.opr)
-
-
-
+    console.log(this.firstOperand);
  
   }
 
   public clear(){
-    this.num1 = 0;
-    this.num2 = 0;
-    this.opr = null;
-    this.result=0;
-    
+    this.currentNumber = '0';
+    this.firstOperand = null;
+    this.operator = null;
+    this.waitForSecondNumber = false;
   }
 }
-
